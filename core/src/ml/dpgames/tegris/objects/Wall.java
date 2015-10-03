@@ -1,6 +1,8 @@
 package ml.dpgames.tegris.objects;
 
 import ml.dpgames.tegris.GameObject;
+import ml.dpgames.tegris.TextureRender;
+import ml.dpgames.tegris.TextureRender.Draw;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -15,7 +17,11 @@ public class Wall extends GameObject {
 	
 	@Override
 	public void render(SpriteBatch batch) {
-		batch.draw(tex, x, y);
+		TextureRender.addTex(new Draw(){
+			public void render(SpriteBatch batch) {
+				batch.draw(tex, x, y);
+			}
+		}, (int) y);
 	}
 
 }

@@ -1,6 +1,8 @@
 package ml.dpgames.tegris.objects;
 
 import ml.dpgames.tegris.GameObject;
+import ml.dpgames.tegris.TextureRender;
+import ml.dpgames.tegris.TextureRender.Draw;
 import ml.dpgames.tegris.screens.GameScreen;
 
 import com.badlogic.gdx.Gdx;
@@ -14,7 +16,7 @@ public class Player extends GameObject {
 	public static float WALK_SPEED = 80f;
 
 	public Player(float x, float y) {
-		super(x, y, 9, 9);
+		super(x, y, tex.getWidth() / 2, tex.getWidth() / 2);
 	}
 
 	@Override
@@ -32,13 +34,17 @@ public class Player extends GameObject {
 		if (Gdx.input.isKeyPressed(Keys.A) || Gdx.input.isKeyPressed(Keys.LEFT)) {
 			x -= WALK_SPEED * delta;
 		}
-		GameScreen.camera.position.x = x + width / 2;
-		GameScreen.camera.position.y = y + height / 2;
+		GameScreen.camera.position.x = x + tex.getWidth() / 4;
+		GameScreen.camera.position.y = y + tex.getHeight() / 4;
 	}
 
 	@Override
 	public void render(SpriteBatch batch) {
-		batch.draw(tex, x, y);
+		TextureRender.addTex(new Draw(){
+			public void render(SpriteBatch batch) {
+				batch.draw(tex, x, y, tex.getWidth() / 2, tex.getHeight() / 2);
+			}
+		}, (int) y);
 	}
 
 }
