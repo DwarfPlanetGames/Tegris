@@ -3,7 +3,6 @@ package ml.dpgames.tegris.objects;
 import ml.dpgames.tegris.GameObject;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Rectangle;
 
 public class Grass extends GameObject {
 
