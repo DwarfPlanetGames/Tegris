@@ -48,7 +48,7 @@ public abstract class Sword implements Weapon {
 		if (isSwinging) {
 			TextureRender.addTex(new Draw() {
 				public void render(SpriteBatch batch) {
-					batch.draw(new TextureRegion(tex), x + (float)Math.cos(Math.toRadians(direction)) * armLength, y + (float)Math.sin(Math.toRadians(direction)) * armLength, tex.getWidth(),
+					batch.draw(new TextureRegion(tex), x + (float)Math.cos(Math.toRadians(swingDelta + direction)) * armLength, y + (float)Math.sin(Math.toRadians(swingDelta + direction)) * armLength, tex.getWidth(),
 							tex.getHeight() / 2.0f, tex.getWidth(),
 							tex.getHeight(), 1.0f / 4.0f, 1.0f / 4.0f,
 							swingDelta + 90 + direction);
