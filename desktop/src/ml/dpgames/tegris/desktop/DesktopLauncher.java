@@ -6,7 +6,11 @@ import ml.dpgames.tegris.MyGdxGame;
 
 public class DesktopLauncher {
 	public static void main (String[] arg) {
-		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		new LwjglApplication(new MyGdxGame(), config);
+		try {
+			LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
+			new LwjglApplication(new MyGdxGame(), config);
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
 	}
 }
