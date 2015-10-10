@@ -57,7 +57,7 @@ public abstract class Sword implements Weapon {
 		} else {
 			TextureRender.addTex(new Draw() {
 				public void render(SpriteBatch batch) {
-					batch.draw(new TextureRegion(tex), x, y, tex.getWidth(),
+					batch.draw(new TextureRegion(tex), x + (float)Math.cos(Math.toRadians(direction - 90)) * (armLength / 2f), y + (float)Math.sin(Math.toRadians(direction - 90)) * (armLength / 2f), tex.getWidth(),
 							tex.getHeight() / 2.0f, tex.getWidth(),
 							tex.getHeight(), 1.0f / 4.0f, 1.0f / 4.0f,
 							(float) (270));

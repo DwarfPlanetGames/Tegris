@@ -24,7 +24,9 @@ public class Player extends GameObject {
 
 	public Player(float x, float y) {
 		super(x, y, tex.getWidth() / 2, tex.getWidth() / 3);
-		weapon = new Sword(0,0,0.2f,new Texture("weapons/swords/laser_sword.png"),false){};
+		weapon = new Sword(0, 0, 0.2f, new Texture(
+				"weapons/swords/laser_sword.png"), false) {
+		};
 	}
 
 	@Override
@@ -91,7 +93,7 @@ public class Player extends GameObject {
 			GameScreen.camera.position.y = GameScreen.camera.viewportHeight / 2;
 		// Update the weapon
 		X = x;
-		Y = y;
+		Y = (int) (y + Math.sin(Math.toRadians(direction - 90)) * 5);
 		if (Gdx.input.isButtonPressed(Buttons.LEFT)) {
 			weapon.activate();
 		}
@@ -109,21 +111,23 @@ public class Player extends GameObject {
 	public Rectangle getBounds() {
 		return new Rectangle(x, y, width, height);
 	}
-	
+
 	public Rectangle getBoundsTop() {
-		return new Rectangle(x + width / 4, y + height/2, width/2, height/2);
+		return new Rectangle(x + width / 4, y + height / 2, width / 2,
+				height / 2);
 	}
 
 	public Rectangle getBoundsBot() {
-		return new Rectangle(x + width / 4, y, width/2, height/2);
+		return new Rectangle(x + width / 4, y, width / 2, height / 2);
 	}
 
 	public Rectangle getBoundsRit() {
-		return new Rectangle(x + width/2, y + height / 4, width/2, height/2);
+		return new Rectangle(x + width / 2, y + height / 4, width / 2,
+				height / 2);
 	}
 
 	public Rectangle getBoundsLft() {
-		return new Rectangle(x, y + height / 4, width/2, height/2);
+		return new Rectangle(x, y + height / 4, width / 2, height / 2);
 	}
 
 	@Override
@@ -133,7 +137,7 @@ public class Player extends GameObject {
 				batch.draw(tex, x, y, tex.getWidth() / 2, tex.getHeight() / 2);
 			}
 		}, (int) y);
-		weapon.render(batch,x-58,y+8,direction);
+		weapon.render(batch, x - 58, y + 8, direction);
 	}
 
 }

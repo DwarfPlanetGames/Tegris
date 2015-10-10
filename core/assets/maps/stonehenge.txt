@@ -1,18 +1,18 @@
-CCCCCCCCCCCCCCCCCCCCCC
-C                    C
-C    CCC             C
-C                    C
-C        C           C
-C         C    CCC   C
-C               C C  C
-C                    C
-C          F         C
-                     C
-C                    C
-C        CCC         C
-C                C   C
-C    CCC         C   C
-C                C   C
-C                    C
-C                    C
-CCCCCCCCCCCCCCCCCCCCCC
+BBBBBBBBBBBBBBBBBBBBBB
+B                    B
+B    BBB             B
+B                    B
+B        B           B
+B         B    BBB   B
+B               B B  B
+B                    B
+B          F         B
+                     B
+B                    B
+B        BBB         B
+B                B   B
+B    BBB         B   B
+B                B   B
+B                    B
+B                    B
+BBBBBBBBBBBBBBBBBBBBBB
