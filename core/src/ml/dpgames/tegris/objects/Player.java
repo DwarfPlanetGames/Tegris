@@ -23,7 +23,7 @@ public class Player extends GameObject {
 	public int direction = 0;
 
 	public Player(float x, float y) {
-		super(x, y, tex.getWidth() / 2, tex.getWidth() / 3);
+		super(x, y, 23 / 2f, 23 / 3f);
 		weapon = new Sword(0, 0, 0.2f, new Texture(
 				"weapons/swords/laser_sword.png"), false) {
 		};
@@ -84,8 +84,8 @@ public class Player extends GameObject {
 		if (y < 0)
 			y = 0;
 		// Set the camera location
-		GameScreen.camera.position.x = x + tex.getWidth() / 4;
-		GameScreen.camera.position.y = y + tex.getHeight() / 4;
+		GameScreen.camera.position.x = x + width / 2;
+		GameScreen.camera.position.y = y + height;
 		// Clamp the camera
 		if (GameScreen.camera.position.x < GameScreen.camera.viewportWidth / 2)
 			GameScreen.camera.position.x = GameScreen.camera.viewportWidth / 2;
@@ -93,7 +93,7 @@ public class Player extends GameObject {
 			GameScreen.camera.position.y = GameScreen.camera.viewportHeight / 2;
 		// Update the weapon
 		X = x;
-		Y = (int) (y + Math.sin(Math.toRadians(direction - 90)) * 5);
+		Y = y;//(int) (y + Math.sin(Math.toRadians(direction - 90)) * 5);
 		if (Gdx.input.isButtonPressed(Buttons.LEFT)) {
 			weapon.activate();
 		}
@@ -134,7 +134,7 @@ public class Player extends GameObject {
 	public void render(SpriteBatch batch) {
 		TextureRender.addTex(new Draw() {
 			public void render(SpriteBatch batch) {
-				batch.draw(tex, x, y, tex.getWidth() / 2, tex.getHeight() / 2);
+				batch.draw(tex, x-5, y-5, tex.getWidth() / 2, tex.getHeight() / 2);
 			}
 		}, (int) y);
 		weapon.render(batch, x - 58, y + 8, direction);

@@ -62,8 +62,8 @@ public class GameScreen implements Screen {
 	public void render(float delta) {
 		// To avoid glitches limit delta
 		System.out.println(delta);
-		if (delta > 0.2f) {
-			delta = 0.2f;
+		if (delta > 0.02f) {
+			delta = 0.02f;
 		}
 		// Set camera to window size
 		camera.setToOrtho(false, Gdx.graphics.getWidth() / SCALE,
