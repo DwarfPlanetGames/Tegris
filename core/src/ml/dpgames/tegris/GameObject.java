@@ -12,7 +12,7 @@ import com.badlogic.gdx.math.Rectangle;
 public class GameObject {
 
 	public float x, y, width, height;
-	public static final Texture terrain = new Texture("terrain_sheet.png");
+	public static Texture terrain;
 	public TextureRegion terrainReg = new TextureRegion(terrain,0,0,16,16);
 	public static final Random rand = new Random();
 
